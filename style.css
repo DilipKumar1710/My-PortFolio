@@ -1,0 +1,279 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #000;
+    background-image: url("https://img.freepik.com/free-photo/beautiful-aerial-shot-fronalpstock-mountains-switzerland-beautiful-pink-blue-sky_181624-9315.jpg?w=740&t=st=1679556502~exp=1679557102~hmac=08192fd963bea08e5116d10a83a8fb812964a3043da1451d016d1e94320dcd9e");
+    background-size:cover;
+    background-position: center;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color:blue;
+    font-size: 1rem;
+    transition: scale 0.2 ease;
+}
+
+a:hover{
+    color:green;
+    scale: 1.2;
+}
+
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.navbar .website-logo a{
+    font-size: 1.5rem;
+    font-weight:bold;
+}
+
+.navbar .navigation-links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle-btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display:none;
+}
+
+.icons-container{
+    width:150px;
+}
+
+@media screen and (max-width:992px) {
+    .icons-container{
+        display: none;
+    }
+    
+}
+
+.navbar .icons-container i{
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* .action-btn{
+    background-color: blue;
+    color:#fff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.8rem;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action-btn:hover{
+    scale: 1.04;
+    color: #fff;
+    background-color: orange;
+}
+
+.action-btn:active{
+    scale:0.95;
+} */
+
+
+/* Drop down list */
+
+.drop_down_box{
+    display: none;
+    position: absolute;
+    right:2rem;
+    top:60px;
+    width:300px;
+    height: 0;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 8px;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.drop_down_box.open{
+    height: 240px;
+}
+
+.drop_down_box li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.drop_down_box li i{
+    font-size: 28px;
+    margin-right: 15px;
+}
+
+/* Responsive Navbar */
+
+@media screen and (max-width:992px) {
+    .navbar .navigation-links,
+    .navbar .action-btn{
+        display: none;
+    }
+
+    .navbar .toggle-btn{
+        display: block;
+    }
+
+    .drop_down_box{
+        display: block;
+    }
+
+}
+
+.container{
+    max-width: 1100px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+/* .introduction-part{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.image-container{
+    width: 50%;
+}
+
+.details-container{
+    width: 50%;
+} */
+
+.introduction-part{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 30px;
+}
+
+
+.profile-pic{
+    width:300px;
+    border-radius: 20%;
+    height: 95%;
+    transition: scale 0.5 ease;
+    cursor: pointer;
+}
+
+.profile-pic:active{
+    scale: 0.95;
+}
+
+.profile-pic:hover{
+    scale: 1.04;
+}
+
+
+.User-name{
+    color:green;
+    font-size: 35px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+
+.User-name:hover{
+    color: blue;
+}
+
+
+.details-container h3{
+    line-height: 28px;
+    letter-spacing: 0.8px;
+    font-size: 23px;
+    margin-bottom: 25px;
+    color: green;
+    font-family: sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.details-container p{
+    margin-bottom: 20px;
+    line-height: 26px;
+    letter-spacing: 0.8px;
+    font-size: 16px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.details-container strong{
+    font-size: 22px;
+    color: yellow;
+    font-family: 'Alkatra', cursive;
+}
+
+.details-container h2{
+    margin-bottom: 20px;
+    font-family: 'Bree Serif', serif;
+    color: darkred;
+}
+
+.details-container h2:hover{
+    color:yellow;
+}
+
+@media screen and (max-width:992px) {
+    .container{
+        padding: 30px;
+    }
+
+    .introduction-part{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .User-name{
+        font-size: 28px;
+        margin-top: 30px;
+    }
+
+    .details-container h3{
+        font-size: 20px;
+        color: orange;
+    }
+
+    .details-container p{
+        font-size: 14px;
+    }
+
+    .details-container strong{
+        font-size: 19px;
+    }
+
+}

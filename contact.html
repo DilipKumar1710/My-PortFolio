@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Bree+Serif&family=Lobster&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="website-logo"><a href="./index.html">My PortFolio</a></div>
+            <ul class="navigation-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./contact.html">Contact Me</a></li>
+            </ul>
+            <div class="icons-container">
+                <a href="https://www.linkedin.com/in/dilipkumarvaddepally/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/DilipKumar1710" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/dilip_kumar1710/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            </div>
+            <div class="drop_down_box">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./contact.html">Contact Me</a></li>
+                <li>
+                    <a href="https://www.linkedin.com/in/dilipkumarvaddepally/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/DilipKumar1710" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/dilip_kumar1710/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </li>    
+            </div>
+    </header>
+    <div class="contact-main-container">
+        <img src="https://res.cloudinary.com/dg5zldvhw/image/upload/v1681213989/5143151_ek8wee.jpg" alt="contact-logo">
+        <form class="form-container" method="post" reset()>
+            <h1>Contact Me</h1>
+            <input type="text" name="name" placeholder="Your Name" id="name">
+            <input type="email" name="email" placeholder="Your Email Id" id="email">
+            <input type="text" name="subject" placeholder="Your Subject" id="subject">
+            <input type="text" name="number" placeholder="Your Contact No." id="number">
+            <textarea name="information" id="message" cols="30" rows="10" placeholder="Please Enter Your Message"></textarea>
+            <button id="btn">Submit</button>
+        </form>
+    </div>
+    <script src="./userActions.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function(event){
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let subject = document.getElementById('subject').value;
+            let phoneNo = document.getElementById('number').value;
+            let message = document.getElementById('message').value;
+            let body = "Name: "+ name + "<br/> Email Id: "+ email + "<br/> Subject: " + subject
+            + "<br/> Phone No: "+ phoneNo + "<br/> Message: "+ message;
+
+            Email.send({
+                SecureToken : "064b8f71-9ce9-4094-a3d3-7046fc1f469a",
+                To : 'dilipkumar.vaddepally141@gmail.com',
+                From : "dilip.dillu1794@gmail.com",
+                Subject : "New Contact Message",
+                Body : body
+            }).then(
+                message => alert("Message Sent Successfully...")
+            );
+
+        });
+    </script>
+</body>
+</html>
